@@ -6,7 +6,7 @@
         <van-loading />
       </view>
       <view class="canvas-panel" bindlongpress="savePicture">
-        <canvas id="canvas-id" canvas-id="canvas-id" class="canvas" type="2d"/>
+        <canvas id="canvas-id" class="canvas" type="2d" />
       </view>
     </view>
     <view class="tip-text">长按图片保存证书</view>

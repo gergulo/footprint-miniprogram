@@ -1,9 +1,9 @@
 <!--pages/statistics/index.wxml-->
 <van-toast id="van-toast" />
-<ask-authorize show="{{authorizeShow}}"/>
+<ask-authorize show="{{authorizeShow}}" />
 
 <view class="container">
-  
+
   <map subkey="ZSLBZ-JE23R-JESWO-WX74H-UTU2V-EMFPZ" latitude="{{latitude}}" longitude="{{longitude}}"
     markers="{{markers}}" scale="12" show-location="true" class="map">
   </map>

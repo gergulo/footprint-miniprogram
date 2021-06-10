@@ -159,7 +159,7 @@ Page({
       })
     }
     let queryDate = this.data.queryDate
-    if(queryDate.length>0){
+    if (queryDate.length > 0) {
       queryDate = `${queryDate[0]}-${queryDate[1]}-1`
     }
     const queyData = {
@@ -199,7 +199,7 @@ Page({
    * @param {*} e 
    */
   onDeleteSignClick(e) {
-    if(e.detail !== "right") return;
+    if (e.detail !== "right") return;
     const requestData = {
       id: e.target.dataset.id
     };
@@ -208,7 +208,7 @@ Page({
       Toast.success(res.msg);
       if (res.code === 1) {
         this.querySignList()
-      } 
+      }
     })
   }
 })

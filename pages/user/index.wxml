@@ -1,17 +1,9 @@
 <!--pages/user/index.wxml-->
 <van-toast id="van-toast" />
 <!-- 日期筛选 -->
-<van-popup
-  show="{{ calendarShow }}"
-  position="bottom"
-  custom-style="height: 40%"
-  bind:close="onCalendarClose">
-  <van-datetime-picker
-    type="year-month"
-    value="{{ currentDate }}"
-    max-date="{{ maxDate }}"
-    bind:cancel="onCalendarClose"
-    bind:confirm="onConfirmDate" />
+<van-popup show="{{ calendarShow }}" position="bottom" custom-style="height: 40%" bind:close="onCalendarClose">
+  <van-datetime-picker type="year-month" value="{{ currentDate }}" max-date="{{ maxDate }}"
+    bind:cancel="onCalendarClose" bind:confirm="onConfirmDate" />
 </van-popup>
 
 <view class="container">
@@ -44,12 +36,8 @@
       <van-swipe-cell right-width="{{ 65 }}" wx:for="{{list}}" wx:key="id" bind:click="onDeleteSignClick"
         data-id="{{item.id}}">
         <van-cell-group>
-          <van-cell
-            bind:click="onCellClick"
-            data-id="{{item.id}}"
-            title="{{item.address}}"
-            label="{{item.create_time}}"
-            border="{{ false }}"/>
+          <van-cell bind:click="onCellClick" data-id="{{item.id}}" title="{{item.address}}" label="{{item.create_time}}"
+            border="{{ false }}" />
         </van-cell-group>
         <view slot="right" class="delete-layout"><text>删除</text></view>
       </van-swipe-cell>

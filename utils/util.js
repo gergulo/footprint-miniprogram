@@ -38,19 +38,19 @@ function getFriendlyTime(time_stamp) {
  * 获取图片
  * @param {*} url 
  */
-function downloadImage(url){
+function downloadImage(url) {
   console.log(url)
-	return new Promise((resolve, reject) => {
-		wx.getImageInfo({
-		  src: url,
-		  success(res) {
-			 resolve(res.path)
-		  },
-		  fail(e){
-			  reject(ee)
-		  }
-		})
-	})
+  return new Promise((resolve, reject) => {
+    wx.getImageInfo({
+      src: url,
+      success(res) {
+        resolve(res.path)
+      },
+      fail(e) {
+        reject(ee)
+      }
+    })
+  })
 }
 
 /**
@@ -60,7 +60,7 @@ function getDeviceXS() {
   return wx.getSystemInfoSync().windowWidth / 750;
 }
 
-function formatDate(date){
+function formatDate(date) {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
   const day = date.getDate()
@@ -68,7 +68,7 @@ function formatDate(date){
   return [year, month, day].map(formatNumber).join("-")
 }
 
-function formatTime(date){
+function formatTime(date) {
   const year = date.getFullYear()
   const month = date.getMonth() + 1
   const day = date.getDate()

@@ -100,7 +100,7 @@ Page({
   /**
    * 查询打卡信息列表
    */
-  querySignList(type=0) {
+  querySignList(type = 0) {
     this.setData({
       queryType: type
     })
@@ -149,7 +149,7 @@ Page({
   /**
    * 查询打卡信息数量
    */
-  querySignCount(type=0) {
+  querySignCount(type = 0) {
     let query_date = "";
     if (type === 0) {
       query_date = formatDate(new Date())

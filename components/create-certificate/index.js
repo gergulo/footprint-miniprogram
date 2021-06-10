@@ -34,9 +34,9 @@ Component({
    * 监听器
    */
   observers: {
-    "show": function(val) {
+    "show": function (val) {
       if (val) {
-        xs = getDeviceXS()
+        // xs = getDeviceXS()
         this.setData({
           canvasWidth: defaultCanvasWidth * xs,
           canvasHeight: defaultCanvasHeight * xs
@@ -60,9 +60,9 @@ Component({
           this.onClose()
         },
         fail: (e) => {
-          if (e.errMsg === "saveImageToPhotosAlbum:fail:auth denied" 
-          || e.errMsg === "saveImageToPhotosAlbum:fail auth deny" 
-          || e.errMsg === "saveImageToPhotosAlbum:fail authorize no response") {
+          if (e.errMsg === "saveImageToPhotosAlbum:fail:auth denied"
+            || e.errMsg === "saveImageToPhotosAlbum:fail auth deny"
+            || e.errMsg === "saveImageToPhotosAlbum:fail authorize no response") {
             wx.showModal({
               title: "提示",
               content: "需要您授权保存相册",
@@ -87,22 +87,22 @@ Component({
     },
     //生成图片 绘制画布
     createPicture() {
+      let userInfo = app.globalData.userInfo
+      // let avatarUrl = userInfo.avatar // 用户头像
       let item = this.data.signDetail
       let signTime = item.create_time.substring(0, 11)
-      let userInfo = app.globalData.userInfo
-      let avatarUrl = userInfo.avatar // 用户头像
       let address = item.address
       wx.createSelectorQuery()
         .in(this)
         .select("#canvas-id")
-        .fields({ node: true, size: true, id: true, })
+        .fields({ node: true, size: true, })
         .exec((res) => {
           const canvas = res[0].node
           const ctx = canvas.getContext("2d")
           canvas.width = this.data.canvasWidth;
           canvas.height = this.data.canvasHeight;
           // 字体
-          ctx.font= "12px serif"
+          ctx.font = "24px serif"
           // 字体颜色
           ctx.fillStyle = "#707070";
           // 背景图
@@ -118,17 +118,17 @@ Component({
             // 用户名2
             ctx.fillText(userInfo.nickname, 210 * xs, 185 * xs)
             // 打卡时间1
-            ctx.fillText("您于_________________，成功打卡", 120 * xs, 245 * xs)
+            ctx.fillText("您于_________________，成功打卡", 120 * xs, 235 * xs)
             // 打卡时间2
-            ctx.fillText(signTime, 190 * xs, 240 * xs)
+            ctx.fillText(signTime, 190 * xs, 230 * xs)
             // 打卡地点1
-            ctx.fillText("________________________________________。", 80 * xs, 290 * xs)
+            ctx.fillText("_________________________________________。", 80 * xs, 275 * xs)
             // 打卡地点2
-            ctx.fillText(address,  130 * xs, 285 * xs)
+            ctx.fillText(address, 110 * xs, 270 * xs)
             // 说明
-            ctx.fillText("特发此证，以资鼓励。",  120 * xs, 335 * xs)
+            ctx.fillText("特发此证，以资鼓励。", 120 * xs, 315 * xs)
             // 
-            ctx.fillText("格格足迹小程序",  380 * xs, 380 * xs)
+            ctx.fillText("格格足迹小程序", 380 * xs, 370 * xs)
             this.setData({
               canvasLoading: false
             })
@@ -144,7 +144,7 @@ Component({
         width: this.data.canvasWidth,
         height: this.data.canvasHeight,
         destWidth: 2 * this.data.canvasWidth, //输出的图片的宽度（写成width的两倍，生成的图片则更清晰）
-        destHeight:  2 * this.data.canvasHeight,
+        destHeight: 2 * this.data.canvasHeight,
         canvas: canvas,
         success: (res) => {
           this.setData({ picPath: res.tempFilePath })

@@ -25,7 +25,7 @@ Page({
     authorizeShow: false, // 登录授权确认弹框
     signShow: false
   },
-  
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -169,7 +169,7 @@ Page({
     mapCtx.moveToLocation({
       latitude: latitude,
       longitude: longitude,
-      success:() => {
+      success: () => {
         consoleUtil.log(`移动到定位点, latitude=${latitude}, longitude=${longitude}`)
         // 设置中心点
         this.setCenterLocation(latitude, longitude);

@@ -43,7 +43,7 @@ function uploadPhoto(filePath, callback = null) {
     wx.uploadFile({
       url: api.uploadPhoto,
       filePath: filePath,
-      header: {"x-token": token},
+      header: { "x-token": token },
       name: "file",
       success(res) {
         if (res.statusCode === 200) {
@@ -59,7 +59,7 @@ function uploadPhoto(filePath, callback = null) {
           }
         }
       },
-      fail(err){
+      fail(err) {
         if (callback) {
           callback({
             "code": -102,

@@ -30,7 +30,7 @@
   color: #ffffff;
 }
 
-.login-layout{
+.login-layout {
   margin-top: 30rpx;
   background-color: #ffffff;
   width: 100%;
@@ -100,7 +100,7 @@
 
 .sign-list-layout {
   width: 100%;
-  height: calc(100vh - 390rpx); 
+  height: calc(100vh - 390rpx);
 }
 
 .loading {

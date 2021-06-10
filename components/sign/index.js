@@ -139,11 +139,11 @@ Component({
       sign(requestData, (res) => {
         if (res.code === 1) {
           Toast.success("打卡成功");
-            this.setData({
-              remark: "",
-              uploadImagePath: "",
-              show: false
-            })
+          this.setData({
+            remark: "",
+            uploadImagePath: "",
+            show: false
+          })
         } else {
           Toast.success(res.msg);
         }
