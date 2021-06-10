@@ -1,0 +1,13 @@
+<!--components/ask-authorize/index.wxml-->
+<van-dialog
+  use-slot
+  title="您还没登录"
+  show="{{ show }}"
+  show-cancel-button
+  bind:close="onClose"
+  bind:confirm="onConfirm"
+  confirm-button-text="立即登录"
+  cancel-button-text="暂不登录"
+  confirm-button-color="#07c060">
+  <van-empty description="请先登录，再进行操作！" />
+</van-dialog>

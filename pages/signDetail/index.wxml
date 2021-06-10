@@ -1,0 +1,33 @@
+<!--pages/signDetail/index.wxml-->
+<van-toast id="van-toast" />
+
+<view class="container">
+  <view class="addr-layout">
+    <image class="info-bg" src="../../static/imgs/info-bg.png" />
+    <view class="addr-panel">
+      <view class="addr-info-panel">
+        <view class="info-text">{{address}}</view>
+        <view class="info-text sub-text">{{create_time}}</view>
+        <view class="addr-op-panel">
+          <van-button round plain type="primary" size="small" class="addr-op-btn" bindtap="onNaviClick">导航</van-button>
+          <van-button round plain type="primary" size="small" class="addr-op-btn" wx:if="{{certificateBtnShow}}"
+            bindtap="onCertificateClick">证书</van-button>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <map id="map" subkey="ZSLBZ-JE23R-JESWO-WX74H-UTU2V-EMFPZ" latitude="{{latitude}}" longitude="{{longitude}}"
+    markers="{{markers}}" scale="16" min-scale="12" max-scale="18" show-location="true" class="map">
+    <cover-view slot="callout">
+      <cover-view marker-id="1" class="remark-layout" wx:if="{{remark||thumbnail_url}}">
+        <cover-view class="pic" wx:if="{{thumbnail_url}}">
+          <cover-image mode="aspectFit" src="{{thumbnail_url}}" bindtap="onRemarkClick" />
+        </cover-view>
+        <cover-view class="remark-text">{{remark}}</cover-view>
+      </cover-view>
+    </cover-view>
+  </map>
+</view>
+
+<create-certificate show="{{certificateShow}}" signDetail="{{signDetail}}" />

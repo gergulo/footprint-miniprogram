@@ -1,0 +1,41 @@
+/**app.wxss**/
+page {
+  --button-normal-font-size: 36rpx;
+  --nav-bar-icon-color: #07c060;
+  --nav-bar-text-color: #07c060;
+  --picker-confirm-action-color: #07c060;
+  --tabbar-height: 100rpx;
+  --tabbar-item-font-size: 24rpx;
+  --tabbar-item-active-color: #07c060;
+  --tabbar-item-icon-size: 38rpx;
+  --tabbar-item-margin-bottom: 4rpx;
+  height: 100%;
+  font-family: -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Helvetica,
+    Segoe UI, Arial, Roboto, 'PingFang SC', 'miui', 'Hiragino Sans GB', 'Microsoft Yahei',
+    sans-serif;
+  color: #707070;
+}
+
+view{
+  box-sizing: border-box;
+}
+
+.container {
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left:0;
+  right: 0;
+  box-sizing: border-box;
+  background-color: #f7f8fa;
+} 
+
+.an-clear{
+  clear: both;
+}
+.an-left{
+  float: left;
+}
+.an-right{
+  float: right;
+} 

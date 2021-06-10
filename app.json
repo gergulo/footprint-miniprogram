@@ -1,0 +1,43 @@
+{
+  "pages": [
+    "pages/user/index",
+    "pages/index/index",
+    "pages/statistics/index",
+    "pages/signDetail/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#07c060",
+    "navigationBarTitleText": "格格足迹",
+    "navigationBarTextStyle": "white"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序定位"
+    }
+  },
+  "usingComponents": {
+    "van-button": "@vant/weapp/button/index",
+    "van-cell": "@vant/weapp/cell/index",
+    "van-cell-group": "@vant/weapp/cell-group/index",
+    "van-datetime-picker": "@vant/weapp/datetime-picker/index",
+    "van-dialog": "@vant/weapp/dialog/index",
+    "van-divider": "@vant/weapp/divider/index",
+    "van-empty": "@vant/weapp/empty/index",
+    "van-field": "@vant/weapp/field/index",
+    "van-grid": "@vant/weapp/grid/index",
+    "van-grid-item": "@vant/weapp/grid-item/index",
+    "van-icon": "@vant/weapp/icon/index",
+    "van-loading": "@vant/weapp/loading/index",
+    "van-popup": "@vant/weapp/popup/index",
+    "van-swipe-cell": "@vant/weapp/swipe-cell/index",
+    "van-tabbar": "@vant/weapp/tabbar/index",
+    "van-tabbar-item": "@vant/weapp/tabbar-item/index",
+    "van-toast": "@vant/weapp/toast/index",
+    "ask-authorize": "./components/ask-authorize/index",
+    "sign": "./components/sign/index",
+    "create-certificate": "./components/create-certificate/index",
+    "tab-bar": "./components/tab-bar/index"
+  },
+  "sitemapLocation": "sitemap.json"
+}

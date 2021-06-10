@@ -1,0 +1,39 @@
+<!--index.wxml-->
+<van-dialog id="van-dialog" />
+<van-toast id="van-toast" />
+<ask-authorize show="{{authorizeShow}}" bind:callBack="onAuthorizeCallBack" />
+<sign show="{{signShow}}" latitude="{{centerLatitude}}" longitude="{{centerLongitude}}" address="{{centerAddress}}"
+  addressInfo="{{centerAddressInfo}}" />
+
+<view class="container">
+
+  <map id="map" subkey="ZSLBZ-JE23R-JESWO-WX74H-UTU2V-EMFPZ" latitude="{{centerLatitude}}"
+    longitude="{{centerLongitude}}" markers="{{markers}}" min-scale="12" max-scale="18" show-location="true" class="map"
+    bindregionchange="onRegionChange">
+  </map>
+  <!--顶部地址-->
+  <view class="addr-layout" wx:if="{{centerAddress}}">
+    <image class="info-bg" src="../../static/imgs/info-bg.png" />
+    <view class="addr-panel">
+      <image class="addr-img" src="../../static/imgs/loc.png" />
+      <view class="addr-text">{{centerAddress}}</view>
+      <image class="right-arrow-img" src="../../static/imgs/right-arrow.png" />
+    </view>
+  </view>
+  <!--中心点-->
+  <view class="target-loc-layout">
+    <image class="target-loc-img" src="../../static/imgs/target-loc.png" />
+  </view>
+  <!--定位当前位置-->
+  <view class="self-loc-layout" bindtap="onSelfLocationClick">
+    <image class="self-loc-img" src="../../static/imgs/to-loc.png" />
+  </view>
+
+  <view class="sign-btn-layout">
+    <view class="sign-btn-panel">
+      <button class="sign-btn" bind:tap="onSignClick">打卡</button>
+    </view>
+  </view>
+</view>
+
+<tab-bar active="index"></tab-bar>

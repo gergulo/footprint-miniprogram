@@ -1,0 +1,122 @@
+/**index.wxss**/
+.container {
+  bottom: 100rpx;
+}
+
+.map {
+  height: calc(100%);
+  width: 100%;
+}
+
+/** 顶部地址 **/
+.addr-layout {
+  width: 96%;
+  height: 98rpx;
+  position: absolute;
+  top: 20rpx;
+  left: 0;
+  margin-left: 2%;
+  border-radius: 5rpx;
+}
+
+.info-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 0.9;
+}
+
+.addr-panel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  display: flex;
+  align-items: center;
+}
+
+.addr-img {
+  width: 40rpx;
+  height: 40rpx;
+  margin-left: 20rpx;
+}
+
+.right-arrow-img {
+  width: 16rpx;
+  height: 28rpx;
+  margin-right: 30rpx;
+}
+
+.addr-text {
+  flex: 1;
+  font-size: 32rpx;
+  text-align: center;
+  margin-left: 10rpx;
+  margin-right: 10rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+/** 回到中心点 **/
+.self-loc-layout {
+  width: 100rpx;
+  height: 100rpx;
+  position: absolute;
+  bottom: 30rpx;
+  right: 10rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.self-loc-img {
+  width: 70rpx;
+  height: 70rpx;
+}
+
+/** 中心点 **/
+.target-loc-layout {
+  position: absolute;
+  top: calc(50% - 62rpx);
+  left: calc(50% - 24rpx);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.target-loc-img {
+  width: 48rpx;
+  height: 62rpx;
+}
+
+/** 打卡 **/
+.sign-btn-layout {
+  position: absolute;
+  bottom: 10rpx;
+  left: 50%;
+  margin-left: -110rpx;
+  z-index: 2;
+}
+
+.sign-btn-panel {
+  width: 220rpx;
+  height: 220rpx;
+  margin: 0 auto;
+  margin-bottom: 80rpx;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  background-color: rgba(250, 119, 73, 0.2);
+}
+
+.sign-btn {
+  color: #ffffff;
+  width: 180rpx;
+  height: 180rpx;
+  margin: 20rpx;
+  line-height: 180rpx;
+  border-radius: 50%;
+  font-size: 48rpx;
+  background-color: rgba(250, 119, 73, 1);
+}

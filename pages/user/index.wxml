@@ -1,0 +1,65 @@
+<!--pages/user/index.wxml-->
+<van-toast id="van-toast" />
+<!-- 日期筛选 -->
+<van-popup
+  show="{{ calendarShow }}"
+  position="bottom"
+  custom-style="height: 40%"
+  bind:close="onCalendarClose">
+  <van-datetime-picker
+    type="year-month"
+    value="{{ currentDate }}"
+    max-date="{{ maxDate }}"
+    bind:cancel="onCalendarClose"
+    bind:confirm="onConfirmDate" />
+</van-popup>
+
+<view class="container">
+  <view class="user-info-layout" wx:if="{{canIUseOpenData}}">
+    <view class="user-info-avatar">
+      <open-data type="userAvatarUrl"></open-data>
+    </view>
+    <open-data type="userNickName" class="user-info-name"></open-data>
+  </view>
+  <view class="login-layout" wx:if="{{!hasUserInfo}}">
+    <image class="login-img" src="../../static/imgs/person.png" />
+    <text class="login-txt">请先登录账号</text>
+    <van-button type="primary" custom-class="login-btn" bindtap="onLoginClick">登录</van-button>
+  </view>
+
+  <view class="sign-layout" wx:if="{{hasUserInfo}}">
+    <view class="search-layout">
+      <text class="search-text" wx:if="{{queryDate.length>0}}">{{queryDate[0] + "年" + queryDate[1] + "月份" }}打卡信息</text>
+      <text class="search-text" wx:else>全部打卡信息</text>
+      <view class="search-panel">
+        <view class="search-icon-layout" bindtap="onSearchClick">
+          <image class="search-img" src="../../static/imgs/search.png" />
+        </view>
+        <view class="search-icon-layout" bindtap="onResetClick" wx:if="{{queryDate.length>0}}">
+          <image class="search-img" src="../../static/imgs/reset.png" />
+        </view>
+      </view>
+    </view>
+    <scroll-view scroll-y class="sign-list-layout" bindscrolltolower="onReachBottom">
+      <van-swipe-cell right-width="{{ 65 }}" wx:for="{{list}}" wx:key="id" bind:click="onDeleteSignClick"
+        data-id="{{item.id}}">
+        <van-cell-group>
+          <van-cell
+            bind:click="onCellClick"
+            data-id="{{item.id}}"
+            title="{{item.address}}"
+            label="{{item.create_time}}"
+            border="{{ false }}"/>
+        </van-cell-group>
+        <view slot="right" class="delete-layout"><text>删除</text></view>
+      </van-swipe-cell>
+      <view wx:if="{{ loading }}" class="loading">
+        <van-loading type="spinner" />
+      </view>
+      <van-divider dashed contentPosition="center" wx:if="{{list.length>0 && !loading}}">没有更多了</van-divider>
+      <van-empty wx:if="{{list.length == 0 && !loading}}" description="暂无打卡信息" />
+    </scroll-view>
+  </view>
+</view>
+
+<tab-bar active="user"></tab-bar>

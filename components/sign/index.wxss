@@ -1,0 +1,91 @@
+/* components/sign/index.wxss */
+
+.container {
+  width: 100%;
+  height: 100%;
+  padding-top: 60rpx;
+  background-color: #fff;
+}
+
+
+.addr-layout {
+  width: 100%;
+  height: 60rpx;
+  padding-top: 10rpx;
+  padding-bottom: 10rpx;
+  display: flex;
+  align-items: center;
+}
+
+.addr-img {
+  width: 44rpx;
+  height: 44rpx;
+  margin-left: 30rpx;
+}
+
+.addr-text {
+  flex: 1;
+  font-size: 32rpx;
+  text-align: left;
+  margin-left: 20rpx;
+  margin-right: 30rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-weight: 500;
+}
+
+.remark-layout {
+  width: 100%;
+  padding-bottom: 10rpx;
+}
+
+.remark-text {
+  font-size: 32rpx;
+  text-align: left;
+}
+
+.image-layout {
+  height: 220rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-bottom: 40rpx;
+}
+
+.image-panel {
+  margin-left: 30rpx;
+  width: 200rpx;
+  height: 200rpx;
+  position: relative;
+}
+
+.default-img {
+  width: 180rpx;
+  height: 180rpx;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+
+.delete-img {
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  z-index: 9999;
+  right: 0;
+  top: 0;
+}
+
+.confirm-layout {
+  height: 140rpx;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 40rpx;
+}
+
+.confirm-btn {
+  width: 700rpx;
+}

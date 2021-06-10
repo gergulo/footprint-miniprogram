@@ -1,0 +1,27 @@
+<!--pages/statistics/index.wxml-->
+<van-toast id="van-toast" />
+<ask-authorize show="{{authorizeShow}}"/>
+
+<view class="container">
+  
+  <map subkey="ZSLBZ-JE23R-JESWO-WX74H-UTU2V-EMFPZ" latitude="{{latitude}}" longitude="{{longitude}}"
+    markers="{{markers}}" scale="12" show-location="true" class="map">
+  </map>
+
+  <!--顶部消息-->
+  <view class="info-layout">
+    <image class="info-bg" src="../../static/imgs/info-bg.png" />
+    <view class="info-panel">
+      <view class="info-panel1">
+        <text class="info-text info-num">{{todayCount}}</text>
+        <text class="info-text">今日打卡</text>
+      </view>
+      <view class="info-panel1">
+        <text class="info-text info-num">{{totalCount}}</text>
+        <text class="info-text">累计打卡</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<tab-bar active="statistics"></tab-bar>
