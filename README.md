@@ -8,13 +8,13 @@
 
 #### 软件架构
 ~~~
-┌─biz					一些业务
-├─components         	公共组件  
-├─libs					第三方组件
+┌─biz                   一些业务
+├─components            公共组件  
+├─libs                  第三方组件
 ├─pages                 业务页面
 ├─static                静态资源
 ├─utils                 公共方法
-│  └─api.js            	接口地址文件     
+│  └─api.js             接口地址文件     
 └─app.json              全局配置类信息
 ~~~
 
