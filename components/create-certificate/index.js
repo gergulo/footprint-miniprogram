@@ -1,10 +1,11 @@
 // components/share/index.js
 import Toast from "@vant/weapp/toast/toast";
-import { downloadImage, getDeviceXS } from "../../utils/util.js"
+import { getDeviceXS } from "../../utils/util.js"
+const consoleUtil = require("../../utils/consoleUtil.js");
 const app = getApp()
 let xs = 1;
-const defaultCanvasWidth = 650;
-const defaultCanvasHeight = 450;
+const defaultCanvasWidth = 680;
+const defaultCanvasHeight = 485;
 Component({
   /**
    * 组件的属性列表
@@ -41,7 +42,7 @@ Component({
           canvasWidth: defaultCanvasWidth / xs,
           canvasHeight: defaultCanvasHeight / xs
         })
-        // console.log(xs)
+        // consoleUtil.log(xs)
         this.createPicture()
       }
     }
@@ -71,16 +72,16 @@ Component({
                 wx.openSetting({
                   success(settingdata) {
                     if (settingdata.authSetting["scope.writePhotosAlbum"]) {
-                      console.log("获取权限成功，给出再次点击图片保存到相册的提示。")
+                      consoleUtil.log("获取权限成功，给出再次点击图片保存到相册的提示。")
                     } else {
-                      console.log("获取权限失败，给出不给权限就无法正常使用的提示")
+                      consoleUtil.log("获取权限失败，给出不给权限就无法正常使用的提示")
                     }
                   }
                 })
               }
             })
           } else {
-            console.log("保存失败", e)
+            consoleUtil.log("保存失败", e)
           }
         }
       });
@@ -114,7 +115,7 @@ Component({
           img.src = "../../static/imgs/share_bg.png";
           img.onload = () => {
             //img.complete表示图片是否加载完成，结果返回true和false;
-            // console.log(img.complete);//true
+            // consoleUtil.log(img.complete);//true
             // 背景图加载完成
             ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
             // 用户名1
@@ -122,17 +123,17 @@ Component({
             // 用户名2
             ctx.fillText(userInfo.nickname, 160 / xs, 168 / xs)
             // 打卡时间1
-            ctx.fillText("您于_________________，成功打卡", 115 / xs, 215 / xs)
+            ctx.fillText("您于_________________，成功打卡", 118 / xs, 215 / xs)
             // 打卡时间2
             ctx.fillText(signTime, 180 / xs, 213 / xs)
             // 打卡地点1
-            ctx.fillText("_________________________________________。", 70 / xs, 260 / xs)
+            ctx.fillText("_____________________________________________。", 70 / xs, 260 / xs)
             // 打卡地点2
             ctx.fillText(address, 80 / xs, 258 / xs)
             // 说明
-            ctx.fillText("特发此状，以资鼓励。", 115 / xs, 305 / xs)
+            ctx.fillText("特发此状，以资鼓励。", 118 / xs, 305 / xs)
             // 
-            ctx.fillText("格格足迹小程序", 400 / xs, 350 / xs)
+            ctx.fillText("格格足迹小程序", 440 / xs, 370 / xs)
             this.drawPicture(canvas);
           };
         })
@@ -155,7 +156,7 @@ Component({
         },
         fail: (e) => {
           this.setData({ loading: false })
-          console.log("生成证书文件失败：", e)
+          consoleUtil.log("生成证书文件失败：", e)
         }
       }, this)
     },

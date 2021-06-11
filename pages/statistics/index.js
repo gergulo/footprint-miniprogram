@@ -184,7 +184,7 @@ Page({
     const list = this.data.list;
     const markers = [];
     if (list && list.length > 0) {
-      console.log(list)
+      consoleUtil.log(list)
       const lastOneData = list[0]
       this.setData({
         latitude: lastOneData.lat,

@@ -26,7 +26,7 @@ function get(k) {
   if (deadTime) {
     if (parseInt(deadTime) < Date.parse(new Date()) / 1000) {
       remove(k);
-      console.log("过期了")
+      console.log(`缓存${k}过期了`)
       return null
     }
   }

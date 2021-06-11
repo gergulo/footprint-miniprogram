@@ -215,7 +215,6 @@ Page({
    * 点击按钮返回定位点
    */
   onSelfLocationClick() {
-    console.log("触发")
     //必须请求定位，改变中心点坐标
     this.requestLocation();
   },

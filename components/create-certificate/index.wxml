@@ -8,9 +8,7 @@
       <view wx:if="{{loading}}" class="loading">
         <van-loading type="spinner" />
       </view>
-      <view wx:else class="image-panel" bindlongpress="savePicture">
-        <image class="image" src="{{picPath}}" />
-      </view>
+      <image wx:else class="image" bindlongpress="savePicture" src="{{picPath}}" />
     </view>
     <view class="tip-text">长按图片保存证书</view>
   </view>

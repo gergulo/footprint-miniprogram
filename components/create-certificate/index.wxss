@@ -6,14 +6,14 @@
 
 .info_layout {
   position: relative;
-  width: 650rpx;
-  height: 530rpx;
+  width: 680rpx;
+  height: 565rpx;
   background: #fff;
   padding-top: 70rpx;
 }
 
 .loading {
-  padding-top: 120rpx;
+  padding-top: 150rpx;
   text-align: center;
 }
 
@@ -28,18 +28,13 @@
 }
 
 .canvas {
-  width: 1300rpx;
-  height: 900rpx;
-}
-
-.image-panel {
-  width: 650rpx;
-  height: 450rpx;
+  width: 1360rpx;
+  height: 970rpx;
 }
 
 .image {
-  width: 100%;
-  height: 100%;
+  width: 680rpx;
+  height: 485rpx;
 }
 
 .tip-text {

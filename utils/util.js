@@ -39,7 +39,6 @@ function getFriendlyTime(time_stamp) {
  * @param {*} url 
  */
 function downloadImage(url) {
-  console.log(url)
   return new Promise((resolve, reject) => {
     wx.getImageInfo({
       src: url,
