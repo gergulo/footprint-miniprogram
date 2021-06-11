@@ -93,7 +93,7 @@
 }
 
 .search-text {
-  padding-left: 20px;
+  padding-left: 30rpx;
   font-size: 30rpx;
 
 }
@@ -104,13 +104,13 @@
 }
 
 .loading {
-  padding-top: 50px;
+  padding-top: 100rpx;
   text-align: center;
 }
 
 .delete-layout {
   display: flex;
-  width: 65px;
+  width: 130rpx;
   justify-content: center;
   align-items: center;
   height: 100%;
