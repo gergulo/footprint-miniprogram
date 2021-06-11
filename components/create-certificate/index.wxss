@@ -13,19 +13,31 @@
 }
 
 .loading {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-top: -16px;
-  margin-left: -16px;
+  padding-top: 120rpx;
+  text-align: center;
 }
 
 .canvas-panel {
-  width: 650rpx;
-  height: 450rpx
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  opacity: 0;
+  position: absolute;
+  left: -750px;
+  top: 0;
 }
 
 .canvas {
+  width: 1300rpx;
+  height: 900rpx;
+}
+
+.image-panel {
+  width: 650rpx;
+  height: 450rpx;
+}
+
+.image {
   width: 100%;
   height: 100%;
 }

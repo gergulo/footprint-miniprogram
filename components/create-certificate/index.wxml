@@ -2,11 +2,14 @@
 <van-popup class="van-popup" closeable show="{{ show }}" bind:close="onClose">
   <view class="info_layout">
     <view class="info_panel">
-      <view wx:if="{{canvasLoading}}" class="loading">
-        <van-loading />
-      </view>
-      <view class="canvas-panel" bindlongpress="savePicture">
+      <view class="canvas-panel">
         <canvas id="canvas-id" class="canvas" type="2d" />
+      </view>
+      <view wx:if="{{loading}}" class="loading">
+        <van-loading type="spinner" />
+      </view>
+      <view wx:else class="image-panel" bindlongpress="savePicture">
+        <image class="image" src="{{picPath}}" />
       </view>
     </view>
     <view class="tip-text">长按图片保存证书</view>

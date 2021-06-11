@@ -24,7 +24,7 @@ Component({
    * 组件的初始数据
    */
   data: {
-    canvasLoading: true,
+    loading: false,
     picPath: "", // 生成的分享图片 临时路径
     canvasWidth: 0,
     canvasHeight: 0
@@ -36,10 +36,10 @@ Component({
   observers: {
     "show": function (val) {
       if (val) {
-        // xs = getDeviceXS()
+        xs = getDeviceXS()
         this.setData({
-          canvasWidth: defaultCanvasWidth * xs,
-          canvasHeight: defaultCanvasHeight * xs
+          canvasWidth: defaultCanvasWidth / xs,
+          canvasHeight: defaultCanvasHeight / xs
         })
         // console.log(xs)
         this.createPicture()
@@ -92,6 +92,7 @@ Component({
       let item = this.data.signDetail
       let signTime = item.create_time.substring(0, 11)
       let address = item.address
+      this.setData({ loading: true })
       wx.createSelectorQuery()
         .in(this)
         .select("#canvas-id")
@@ -101,8 +102,11 @@ Component({
           const ctx = canvas.getContext("2d")
           canvas.width = this.data.canvasWidth;
           canvas.height = this.data.canvasHeight;
+          // 背景色
+          ctx.fillStyle = "#FFFFFF";
+          ctx.fillRect(0, 0, canvas.width, canvas.height);
           // 字体
-          ctx.font = "24px serif"
+          ctx.font = "48px serif"
           // 字体颜色
           ctx.fillStyle = "#707070";
           // 背景图
@@ -114,24 +118,21 @@ Component({
             // 背景图加载完成
             ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
             // 用户名1
-            ctx.fillText("尊敬的_________________：", 80 * xs, 190 * xs)
+            ctx.fillText("尊敬的_________________：", 70 / xs, 170 / xs)
             // 用户名2
-            ctx.fillText(userInfo.nickname, 210 * xs, 185 * xs)
+            ctx.fillText(userInfo.nickname, 160 / xs, 168 / xs)
             // 打卡时间1
-            ctx.fillText("您于_________________，成功打卡", 120 * xs, 235 * xs)
+            ctx.fillText("您于_________________，成功打卡", 115 / xs, 215 / xs)
             // 打卡时间2
-            ctx.fillText(signTime, 190 * xs, 230 * xs)
+            ctx.fillText(signTime, 180 / xs, 213 / xs)
             // 打卡地点1
-            ctx.fillText("_________________________________________。", 80 * xs, 275 * xs)
+            ctx.fillText("_________________________________________。", 70 / xs, 260 / xs)
             // 打卡地点2
-            ctx.fillText(address, 110 * xs, 270 * xs)
+            ctx.fillText(address, 80 / xs, 258 / xs)
             // 说明
-            ctx.fillText("特发此证，以资鼓励。", 120 * xs, 315 * xs)
+            ctx.fillText("特发此状，以资鼓励。", 115 / xs, 305 / xs)
             // 
-            ctx.fillText("格格足迹小程序", 380 * xs, 370 * xs)
-            this.setData({
-              canvasLoading: false
-            })
+            ctx.fillText("格格足迹小程序", 400 / xs, 350 / xs)
             this.drawPicture(canvas);
           };
         })
@@ -143,13 +144,17 @@ Component({
         y: 0,
         width: this.data.canvasWidth,
         height: this.data.canvasHeight,
-        destWidth: 2 * this.data.canvasWidth, //输出的图片的宽度（写成width的两倍，生成的图片则更清晰）
-        destHeight: 2 * this.data.canvasHeight,
+        destWidth: this.data.canvasWidth, //输出的图片的宽度（写成width的两倍，生成的图片则更清晰）
+        destHeight: this.data.canvasHeight,
         canvas: canvas,
+        fileType: "jpg",
+        quality: 1,
         success: (res) => {
+          this.setData({ loading: false })
           this.setData({ picPath: res.tempFilePath })
         },
         fail: (e) => {
+          this.setData({ loading: false })
           console.log("生成证书文件失败：", e)
         }
       }, this)
