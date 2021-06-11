@@ -106,7 +106,7 @@ Component({
           ctx.fillStyle = "#FFFFFF";
           ctx.fillRect(0, 0, canvas.width, canvas.height);
           // 字体
-          ctx.font = "48px serif"
+          ctx.font = "42px serif"
           // 字体颜色
           ctx.fillStyle = "#707070";
           // 背景图
