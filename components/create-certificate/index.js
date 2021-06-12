@@ -1,11 +1,11 @@
 // components/share/index.js
 import Toast from "@vant/weapp/toast/toast";
-import { getDeviceXS } from "../../utils/util.js"
+import { getPixelRatio } from "../../utils/util.js"
 const consoleUtil = require("../../utils/consoleUtil.js");
 const app = getApp()
 let xs = 1;
-const defaultCanvasWidth = 680;
-const defaultCanvasHeight = 485;
+const defaultCanvasWidth = 1360;
+const defaultCanvasHeight = 970;
 Component({
   /**
    * 组件的属性列表
@@ -37,12 +37,11 @@ Component({
   observers: {
     "show": function (val) {
       if (val) {
-        xs = getDeviceXS()
+        xs = getPixelRatio()
         this.setData({
           canvasWidth: defaultCanvasWidth / xs,
           canvasHeight: defaultCanvasHeight / xs
         })
-        // consoleUtil.log(xs)
         this.createPicture()
       }
     }
@@ -93,6 +92,9 @@ Component({
       let item = this.data.signDetail
       let signTime = item.create_time.substring(0, 11)
       let address = item.address
+      const lineHeight = 80 / xs
+      let initTop = 360 / xs
+      let initLeft = 140 / xs
       this.setData({ loading: true })
       wx.createSelectorQuery()
         .in(this)
@@ -107,33 +109,37 @@ Component({
           ctx.fillStyle = "#FFFFFF";
           ctx.fillRect(0, 0, canvas.width, canvas.height);
           // 字体
-          ctx.font = "42px serif"
+          ctx.font = "27px serif"
           // 字体颜色
           ctx.fillStyle = "#707070";
           // 背景图
           let img = canvas.createImage();
-          img.src = "../../static/imgs/share_bg.png";
+          img.src = "../../static/share_bg.png";
           img.onload = () => {
             //img.complete表示图片是否加载完成，结果返回true和false;
             // consoleUtil.log(img.complete);//true
             // 背景图加载完成
             ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
             // 用户名1
-            ctx.fillText("尊敬的_________________：", 70 / xs, 170 / xs)
+            ctx.fillText("尊敬的_________________：", initLeft, initTop)
             // 用户名2
-            ctx.fillText(userInfo.nickname, 160 / xs, 168 / xs)
+            ctx.fillText(userInfo.nickname, initLeft + 160 / xs, initTop - 4 / xs)
+            initTop += lineHeight
             // 打卡时间1
-            ctx.fillText("您于_________________，成功打卡", 118 / xs, 215 / xs)
+            ctx.fillText("您于_________________，成功打卡", initLeft + 90 / xs, initTop)
             // 打卡时间2
-            ctx.fillText(signTime, 180 / xs, 213 / xs)
+            ctx.fillText(signTime, initLeft + 210 / xs, initTop - 4 / xs)
+            initTop += lineHeight
             // 打卡地点1
-            ctx.fillText("_____________________________________________。", 70 / xs, 260 / xs)
+            ctx.fillText("______________________________________________。", initLeft, initTop)
             // 打卡地点2
-            ctx.fillText(address, 80 / xs, 258 / xs)
+            ctx.fillText(address, initLeft + 20 / xs, initTop - 4 / xs)
+            initTop += lineHeight
             // 说明
-            ctx.fillText("特发此状，以资鼓励。", 118 / xs, 305 / xs)
-            // 
-            ctx.fillText("格格足迹小程序", 440 / xs, 370 / xs)
+            ctx.fillText("特发此状，以资鼓励。", initLeft + 90 / xs, initTop)
+            initTop += 1.5 * lineHeight
+            // 落款
+            ctx.fillText("格格足迹小程序",  initLeft + 680 / xs, initTop)
             this.drawPicture(canvas);
           };
         })
@@ -145,7 +151,7 @@ Component({
         y: 0,
         width: this.data.canvasWidth,
         height: this.data.canvasHeight,
-        destWidth: this.data.canvasWidth, //输出的图片的宽度（写成width的两倍，生成的图片则更清晰）
+        destWidth: this.data.canvasWidth,
         destHeight: this.data.canvasHeight,
         canvas: canvas,
         fileType: "jpg",

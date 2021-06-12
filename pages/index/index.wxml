@@ -13,20 +13,20 @@
   </map>
   <!--顶部地址-->
   <view class="addr-layout" wx:if="{{centerAddress}}">
-    <image class="info-bg" src="../../static/imgs/info-bg.png" />
+    <image class="info-bg" src="../../static/info-bg.png" />
     <view class="addr-panel">
-      <image class="addr-img" src="../../static/imgs/loc.png" />
+      <image class="addr-img" src="../../static/loc.png" />
       <view class="addr-text">{{centerAddress}}</view>
-      <image class="right-arrow-img" src="../../static/imgs/right-arrow.png" />
+      <image class="right-arrow-img" src="../../static/right-arrow.png" />
     </view>
   </view>
   <!--中心点-->
   <view class="target-loc-layout">
-    <image class="target-loc-img" src="../../static/imgs/target-loc.png" />
+    <image class="target-loc-img" src="../../static/target-loc.png" />
   </view>
   <!--定位当前位置-->
   <view class="self-loc-layout" bindtap="onSelfLocationClick">
-    <image class="self-loc-img" src="../../static/imgs/to-loc.png" />
+    <image class="self-loc-img" src="../../static/to-loc.png" />
   </view>
 
   <view class="sign-btn-layout">

@@ -10,7 +10,7 @@
 
   <!--顶部消息-->
   <view class="info-layout">
-    <image class="info-bg" src="../../static/imgs/info-bg.png" />
+    <image class="info-bg" src="../../static/info-bg.png" />
     <view class="info-panel">
       <view class="info-panel1">
         <text class="info-text info-num">{{todayCount}}</text>

@@ -14,7 +14,7 @@
     <open-data type="userNickName" class="user-info-name"></open-data>
   </view>
   <view class="login-layout" wx:if="{{!hasUserInfo}}">
-    <image class="login-img" src="../../static/imgs/person.png" />
+    <image class="login-img" src="../../static/person.png" />
     <text class="login-txt">请先登录账号</text>
     <van-button type="primary" custom-class="login-btn" bindtap="onLoginClick">登录</van-button>
   </view>
@@ -25,10 +25,10 @@
       <text class="search-text" wx:else>全部打卡信息</text>
       <view class="search-panel">
         <view class="search-icon-layout" bindtap="onSearchClick">
-          <image class="search-img" src="../../static/imgs/search.png" />
+          <image class="search-img" src="../../static/search.png" />
         </view>
         <view class="search-icon-layout" bindtap="onResetClick" wx:if="{{queryDate.length>0}}">
-          <image class="search-img" src="../../static/imgs/reset.png" />
+          <image class="search-img" src="../../static/reset.png" />
         </view>
       </view>
     </view>

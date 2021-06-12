@@ -31,7 +31,7 @@ App({
               title: "更新提示",
               content: "新版本已经准备好，是否重启小程序？",
               success: (res) => {
-                console.log("用户确认重启小程序进行更新")
+                consoleUtil.log("用户确认重启小程序进行更新")
                 if (res.confirm) {
                   // 新的版本已经下载好，调用 applyUpdate 应用新版本并重启
                   updateManager.applyUpdate()

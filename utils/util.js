@@ -55,8 +55,8 @@ function downloadImage(url) {
 /**
  * 获取rpx与px的比率，用于将rpx换算成px
  */
-function getDeviceXS() {
-  return wx.getSystemInfoSync().windowWidth / 750;
+function getPixelRatio() {
+  return 750 / wx.getSystemInfoSync().windowWidth;
 }
 
 function formatDate(date) {
@@ -88,5 +88,5 @@ module.exports = {
   formatDate: formatDate,
   getFriendlyTime: getFriendlyTime,
   downloadImage: downloadImage,
-  getDeviceXS: getDeviceXS
+  getPixelRatio: getPixelRatio
 }

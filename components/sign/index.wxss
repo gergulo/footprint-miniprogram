@@ -3,15 +3,14 @@
 .container {
   width: 100%;
   height: 100%;
-  padding-top: 60rpx;
+  padding: 60rpx 30rpx 40rpx 30rpx;
   background-color: #fff;
 }
 
 .addr-layout {
   width: 100%;
   height: 60rpx;
-  padding-top: 10rpx;
-  padding-bottom: 10rpx;
+  padding: 10rpx 0;
   display: flex;
   align-items: center;
 }
@@ -19,15 +18,13 @@
 .addr-img {
   width: 44rpx;
   height: 44rpx;
-  margin-left: 30rpx;
 }
 
 .addr-text {
   flex: 1;
   font-size: 32rpx;
   text-align: left;
-  margin-left: 20rpx;
-  margin-right: 30rpx;
+  margin-left: 10rpx;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -49,11 +46,10 @@
   width: 100%;
   display: flex;
   align-items: center;
-  padding-bottom: 40rpx;
+  padding-bottom: 20rpx;
 }
 
 .image-panel {
-  margin-left: 30rpx;
   width: 200rpx;
   height: 200rpx;
   position: relative;
@@ -76,15 +72,7 @@
   top: 0;
 }
 
-.confirm-layout {
-  height: 140rpx;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-bottom: 40rpx;
-}
-
 .confirm-btn {
-  width: 700rpx;
+  width: 690rpx;
+  height: 140rpx;
 }

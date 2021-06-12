@@ -3,7 +3,7 @@
 
 <view class="container">
   <view class="addr-layout">
-    <image class="info-bg" src="../../static/imgs/info-bg.png" />
+    <image class="info-bg" src="../../static/info-bg.png" />
     <view class="addr-panel">
       <view class="addr-info-panel">
         <view class="info-text">{{address}}</view>

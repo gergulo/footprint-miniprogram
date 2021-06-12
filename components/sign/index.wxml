@@ -3,7 +3,7 @@
   <view class="container">
     <van-divider />
     <view class="addr-layout">
-      <image class="addr-img" src="../../static/imgs/loc.png" />
+      <image class="addr-img" src="../../static/loc.png" />
       <view class="addr-text">{{address}}</view>
     </view>
     <view class="remark-layout">
@@ -13,16 +13,14 @@
     </view>
     <view class="image-layout">
       <view class="image-panel">
-        <image class="default-img" src="../../static/imgs/camera.png" bindtap="onTakeImage"
+        <image class="default-img" src="../../static/camera.png" bindtap="onTakeImage"
           wx:if="{{!uploadImagePath}}" />
         <image class="default-img" src="{{uploadImagePath}}" bindtap="onPreviewImage" wx:if="{{uploadImagePath}}"
           mode="aspectFill" />
-        <image class="delete-img" src="../../static/imgs/delete.png" wx:if="{{uploadImagePath}}"
+        <image class="delete-img" src="../../static/delete.png" wx:if="{{uploadImagePath}}"
           bindtap="onDeleteImage" />
       </view>
     </view>
-    <view class="confirm-layout">
-      <van-button type="primary" custom-class="confirm-btn" bindtap="onConfirmClick">提交</van-button>
-    </view>
+    <van-button type="primary" custom-class="confirm-btn" bindtap="onConfirmClick">提交</van-button>
   </view>
 </van-popup>

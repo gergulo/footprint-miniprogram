@@ -6,10 +6,27 @@
 
 .info_layout {
   position: relative;
-  width: 680rpx;
-  height: 565rpx;
+  width: 720rpx;
+  height: 640rpx;
   background: #fff;
-  padding-top: 70rpx;
+  padding: 60rpx 20rpx;
+}
+
+
+.tips-panel {
+  position: absolute;
+  top: 26rpx;
+  display: flex;
+}
+
+.tips-img {
+  width: 42rpx;
+  height: 42rpx;
+}
+
+.tip-text {
+  font-size: 32rpx;
+  margin-left: 10rpx;
 }
 
 .loading {
@@ -35,11 +52,4 @@
 .image {
   width: 680rpx;
   height: 485rpx;
-}
-
-.tip-text {
-  position: absolute;
-  top: 28rpx;
-  color: #707070;
-  padding-left: 30rpx;
 }

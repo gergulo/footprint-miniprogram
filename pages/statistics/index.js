@@ -194,7 +194,7 @@ Page({
     list.forEach((item) => {
       markers.push({
         id: item.id,
-        iconPath: "../../static/imgs/loc2.png",
+        iconPath: "../../static/loc2.png",
         longitude: item.lng,
         latitude: item.lat,
         width: "40rpx",

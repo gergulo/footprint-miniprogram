@@ -110,7 +110,7 @@ Page({
         consoleUtil.log(resData)
         locationInfos.push({
           id: 1,
-          iconPath: "../../static/imgs/loc2.png",
+          iconPath: "../../static/loc2.png",
           longitude: resData.lng,
           latitude: resData.lat,
           width: "48rpx",
