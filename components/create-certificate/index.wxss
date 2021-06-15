@@ -20,8 +20,8 @@
 }
 
 .tips-img {
-  width: 42rpx;
-  height: 42rpx;
+  width: 40rpx;
+  height: 40rpx;
 }
 
 .tip-text {

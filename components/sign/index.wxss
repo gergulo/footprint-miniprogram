@@ -16,8 +16,8 @@
 }
 
 .addr-img {
-  width: 44rpx;
-  height: 44rpx;
+  width: 40rpx;
+  height: 40rpx;
 }
 
 .addr-text {
