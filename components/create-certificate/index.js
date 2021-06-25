@@ -92,9 +92,10 @@ Component({
       let item = this.data.signDetail
       let signTime = item.create_time.substring(0, 11)
       let address = item.address
-      const lineHeight = 80 / xs
-      let initTop = 360 / xs
+      const lineHeight = 70 / xs
+      let initTop = 450 / xs
       let initLeft = 140 / xs
+      let sealSize = 200 / xs
       this.setData({ loading: true })
       wx.createSelectorQuery()
         .in(this)
@@ -109,17 +110,17 @@ Component({
           ctx.fillStyle = "#FFFFFF";
           ctx.fillRect(0, 0, canvas.width, canvas.height);
           // 字体
-          ctx.font = "27px serif"
+          ctx.font = "24px serif"
           // 字体颜色
           ctx.fillStyle = "#707070";
           // 背景图
-          let img = canvas.createImage();
-          img.src = "../../static/share_bg.png";
-          img.onload = () => {
+          let bgImg = canvas.createImage();
+          bgImg.src = "../../static/share_bg.png";
+          bgImg.onload = () => {
             //img.complete表示图片是否加载完成，结果返回true和false;
             // consoleUtil.log(img.complete);//true
             // 背景图加载完成
-            ctx.drawImage(img, 0, 0, canvas.width, canvas.height);
+            ctx.drawImage(bgImg, 0, 0, canvas.width, canvas.height);
             // 用户名1
             ctx.fillText("尊敬的_________________：", initLeft, initTop)
             // 用户名2
@@ -137,10 +138,18 @@ Component({
             initTop += lineHeight
             // 说明
             ctx.fillText("特发此状，以资鼓励。", initLeft + 90 / xs, initTop)
-            initTop += 1.5 * lineHeight
+            initTop += 1.2 * lineHeight
             // 落款
             ctx.fillText("格格足迹小程序",  initLeft + 680 / xs, initTop)
-            this.drawPicture(canvas);
+            // 公章图
+            let sealImg = canvas.createImage();
+            sealImg.src = "../../static/seal.png";
+            sealImg.onload = () => {
+              ctx.drawImage(sealImg, initLeft + 760 / xs, initTop - 120 / xs, sealSize , sealSize);
+              // 生成完整图片
+              this.drawPicture(canvas);
+            };
+            
           };
         })
     },
