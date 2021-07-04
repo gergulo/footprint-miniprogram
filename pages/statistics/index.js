@@ -3,7 +3,7 @@ import Toast from "@vant/weapp/toast/toast";
 import { defaultLnglat } from "../../utils/constant.js";
 import { getList, getCount } from "../../biz/signBiz.js";
 import { formatDate } from "../../utils/util.js"
-const consoleUtil = require("../../utils/consoleUtil.js");
+import consoleUtil from "../../utils/consoleUtil.js";
 const defaultPageSize = 10000;
 // 获取应用实例
 const app = getApp()

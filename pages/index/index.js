@@ -2,7 +2,7 @@
 import Dialog from "@vant/weapp/dialog/dialog";
 import Toast from "@vant/weapp/toast/toast";
 import { tencentAk, defaultLnglat } from "../../utils/constant.js";
-const consoleUtil = require("../../utils/consoleUtil.js");
+import consoleUtil from "../../utils/consoleUtil.js";
 const QQMapWX = require("../../libs/qqmap-wx-jssdk.min.js");
 // 获取应用实例
 const app = getApp()

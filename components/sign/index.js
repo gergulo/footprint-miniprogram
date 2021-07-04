@@ -1,7 +1,7 @@
 // components/sign/index.js
 import Toast from "@vant/weapp/toast/toast";
 import { uploadPhoto, sign } from "../../biz/signBiz.js";
-const consoleUtil = require("../../utils/consoleUtil.js");
+import consoleUtil from "../../utils/consoleUtil.js";
 
 Component({
   /**

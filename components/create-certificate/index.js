@@ -1,7 +1,7 @@
 // components/share/index.js
 import Toast from "@vant/weapp/toast/toast";
 import { getPixelRatio } from "../../utils/util.js"
-const consoleUtil = require("../../utils/consoleUtil.js");
+import consoleUtil from "../../utils/consoleUtil.js";
 const app = getApp()
 let xs = 1;
 const defaultCanvasWidth = 1360;

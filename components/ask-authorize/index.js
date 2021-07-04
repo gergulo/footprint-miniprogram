@@ -1,7 +1,7 @@
 // components/ask-authorize/index.js
 import Toast from "@vant/weapp/toast/toast";
 import { wxLogin, wxUpdateUserInfo } from "../../biz/wxBiz.js";
-const consoleUtil = require("../../utils/consoleUtil.js");
+import consoleUtil from "../../utils/consoleUtil.js";
 const app = getApp()
 Component({
   /**

@@ -2,7 +2,7 @@
 import Toast from "@vant/weapp/toast/toast";
 import { wxLogin, wxUpdateUserInfo } from "../../biz/wxBiz.js";
 import { getList, deleteSign } from "../../biz/signBiz.js";
-const consoleUtil = require("../../utils/consoleUtil.js");
+import consoleUtil from "../../utils/consoleUtil.js";
 const defaultPageSize = 10;
 const defaultDate = new Date().getTime();
 const app = getApp()

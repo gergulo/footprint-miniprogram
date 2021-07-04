@@ -2,7 +2,7 @@ import { api } from "../utils/api.js";
 import { setCache, getCache } from "../utils/cacheUtil.js";
 import { sendPost } from "../utils/request.js";
 import { userInfoKey, tokenKey, tokenInvalidMsg } from "../utils/constant.js";
-const consoleUtil = require("../utils/consoleUtil.js");
+import consoleUtil from "../utils/consoleUtil.js";
 const app = getApp()
 
 /**
@@ -100,7 +100,7 @@ function updateUserInfo(callback = null) {
   });
 }
 
-module.exports = {
-  wxLogin: login,
-  wxUpdateUserInfo: updateUserInfo,
+export {
+  login,
+  updateUserInfo,
 }

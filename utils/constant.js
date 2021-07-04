@@ -7,10 +7,10 @@ const tokenKey = "token"
 const tokenInvalidMsg = { "code": -10, "msg": "登录token无效" }
 const defaultLnglat = { "longitude": 113.272808, "latitude": 23.139212 }
 
-module.exports = {
-  tencentAk: tencentAk,
-  userInfoKey: userInfoKey,
-  tokenKey: tokenKey,
-  tokenInvalidMsg: tokenInvalidMsg,
-  defaultLnglat: defaultLnglat
+export {
+  tencentAk,
+  userInfoKey,
+  tokenKey,
+  tokenInvalidMsg,
+  defaultLnglat
 }

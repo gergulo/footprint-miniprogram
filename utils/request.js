@@ -69,7 +69,7 @@ function generateHeader(token = "") {
   }
 }
 
-module.exports = {
-  sendPost: sendPost,
-  sendGet: sendGet
+export {
+  sendPost,
+  sendGet
 }

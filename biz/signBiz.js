@@ -2,7 +2,7 @@ import { api } from "../utils/api.js";
 import { getCache } from "../utils/cacheUtil.js";
 import { sendPost, sendGet } from "../utils/request.js";
 import { tokenKey, tokenInvalidMsg } from "../utils/constant.js";
-const consoleUtil = require("../utils/consoleUtil.js");
+import consoleUtil from "../utils/consoleUtil.js";
 
 /**
  * 打卡
@@ -197,11 +197,11 @@ function getCount(requsetData, callback = null) {
     });
   }
 }
-module.exports = {
-  uploadPhoto: uploadPhoto,
-  sign: sign,
-  getList: getList,
-  getDetail: getDetail,
-  deleteSign: deleteSign,
-  getCount: getCount
+export {
+  uploadPhoto,
+  sign,
+  getList,
+  getDetail,
+  deleteSign,
+  getCount
 }

@@ -52,9 +52,9 @@ function remove(k) {
 function clear() {
   wx.clearStorageSync();
 }
-module.exports = {
-  setCache: set,
-  getCache: get,
-  removeCache: remove,
-  clearCache: clear
+export {
+  set as setCache,
+  get as getCache,
+  remove as removeCache,
+  clear as clearCache
 }

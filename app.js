@@ -1,5 +1,5 @@
 // app.js
-const consoleUtil = require("utils/consoleUtil.js");
+import consoleUtil from "utils/consoleUtil.js";
 import { userInfoKey, tokenKey } from "utils/constant.js";
 import { getCache } from "utils/cacheUtil.js";
 

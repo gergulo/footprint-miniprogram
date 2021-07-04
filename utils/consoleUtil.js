@@ -11,6 +11,6 @@ function log(content) {
   }
 }
 
-module.exports = {
-  log: log,
+export default{
+  log,
 }
