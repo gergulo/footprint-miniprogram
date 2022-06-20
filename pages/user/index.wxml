@@ -8,10 +8,8 @@
 
 <view class="container">
   <view class="user-info-layout" wx:if="{{canIUseOpenData}}">
-    <view class="user-info-avatar">
-      <open-data type="userAvatarUrl"></open-data>
-    </view>
-    <open-data type="userNickName" class="user-info-name"></open-data>
+      <image class="user-info-avatar" src="{{userInfo.avatar}}"/>
+      <text class="user-info-name">{{userInfo.nickName}}</text>
   </view>
   <view class="login-layout" wx:if="{{!hasUserInfo}}">
     <image class="login-img" src="../../static/person.png" />

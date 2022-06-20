@@ -1,6 +1,6 @@
 // pages/user/index.js
 import Toast from "@vant/weapp/toast/toast";
-import { wxLogin, wxUpdateUserInfo } from "../../biz/wxBiz.js";
+import { login as wxLogin, updateUserInfo as wxUpdateUserInfo } from "../../biz/wxBiz.js";
 import { getList, deleteSign } from "../../biz/signBiz.js";
 import consoleUtil from "../../utils/consoleUtil.js";
 const defaultPageSize = 10;
@@ -22,6 +22,10 @@ Page({
     currentDate: defaultDate, //日历选择器当前日期
     maxDate: defaultDate, //日历选择器最大时间
     queryDate: [], //查询日期
+    userInfo: {
+        avatar: "",
+        nickName: ""
+    }
   },
 
   /**
@@ -33,9 +37,14 @@ Page({
         canIUseOpenData: true
       })
     }
-    if (app.globalData.userInfo) {
+    let userInfo = app.globalData.userInfo
+    if (userInfo) {
       this.setData({
-        hasUserInfo: true
+        hasUserInfo: true,
+        userInfo: {
+            avatar: userInfo.avatar,
+            nickName: userInfo.nickname
+        }
       })
       this.querySignList()
     }
