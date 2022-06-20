@@ -25,7 +25,7 @@ Component({
       value: ""
     },
     addressInfo: {
-      type: () => { },
+      type: Object,
       value: {}
     }
   },

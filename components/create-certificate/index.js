@@ -16,7 +16,7 @@ Component({
       value: false
     },
     signDetail: { // 当前打卡信息
-      type: () => { },
+      type: Object,
       value: {}
     }
   },
